@@ -7,7 +7,8 @@ on:
        name:
             description: 'Name'
             type: string
-            default: "Hello From Inputs"
+            required: true
+            default: Tejas
        age:
             description: 'Age'
             type: number
@@ -23,5 +24,6 @@ jobs:
 
     steps:
       - name: Greetings
-        run: echo "Hello ${{inputs.name}} your age is ${{inputs.age}}"
-       
+        run: echo "Hi ${{inputs.name}}"
+      - name: Age
+        run: echo "Your age is ${{inputs.age}}"
