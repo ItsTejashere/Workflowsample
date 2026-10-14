@@ -1,0 +1,23 @@
+
+name: Step-Output
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      name: ${{ steps.set-output.outputs.name }}
+
+    steps:
+      - name: set-output
+        id: set-output
+        run: |
+          echo "age=22" >> "$GITHUB_OUTPUT"
+          echo "Name=Tejas" >> "$GITHUB_OUTPUT"
+
+      - name: Get from Output
+        run: |
+          echo "${{ steps.set-output.outputs.name }}"
+          echo "${{ steps.set-output.outputs.age }}"
