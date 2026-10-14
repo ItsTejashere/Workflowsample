@@ -1,5 +1,5 @@
 
-name: Step-Output
+name: Job-Output
 
 on:
   workflow_dispatch: 
