@@ -2,10 +2,19 @@
 name: Manual Workflow
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+       name:
+            description: 'Name'
+            type: string
+            default: "Hello From Inputs"
+    
+      
+        
+        
 
 jobs:
-  demo:
+  manual:
     runs-on: ubuntu-latest
 
     steps:
