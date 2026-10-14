@@ -19,4 +19,4 @@ jobs:
 
     steps:
       - name: Greetings
-        run: echo "Hello Bro..!"
+        run: echo "${{inputs.name}}"
