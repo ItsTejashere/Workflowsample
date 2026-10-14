@@ -32,10 +32,10 @@ jobs:
 
     steps:
       - name: Greetings
-            run: echo "Hi ${{inputs.name}}"
+        run: echo "Hi ${{inputs.name}}"
       - name: Age
-            run: echo "Your age is ${{inputs.age}}"
-      - name:Gender
-            run: echo "Your Gender is ${{inputs.gender}}"
-      - name:is married
-            run: echo "you are ${{inputs.married}}"
+        run: echo "Your age is ${{inputs.age}}"
+      - name: Gender
+        run: echo "Your Gender is ${{inputs.gender}}"
+      - name: is married
+        run: echo "you are ${{inputs.married}}"
