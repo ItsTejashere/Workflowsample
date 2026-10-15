@@ -1,16 +1,26 @@
 name: Envirnment vaiables 
 on: 
   workflow_dispatch:
-#env:                      #This is Workflow level Level
- # NAME: "Tejas from"
+env:                      #This is Workflow level Level
+  NAME: "Tejas In Workflow"
 
 jobs:
     job-level-env-access:
         env:
-          NAME: Tejas
+          NAME: Tejas in Job level
         runs-on: ubuntu-latest
         steps:
         -   name: Access in 1st step
             run: echo "Heloo ${{env.NAME}}"
         -   name: Access in multiple Steps
             run : echo "Hello from job level ${{env.NAME}}"
+    step-level-env-access:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Step level env var
+            env:
+              NAME: Tejas in step level
+            run: echo "Hello ${{env.name}}"
+
+          - name: Step level access 2
+            run: echo "Hello ${{env.NAME}}"
