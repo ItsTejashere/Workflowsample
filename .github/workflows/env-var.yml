@@ -1,0 +1,12 @@
+name: Job Level
+on: 
+  workflow_dispatch:
+env:
+  NAME: "Tejas"
+
+jobs:
+    job-level-env-access:
+        runs-on: ubuntu-latest
+        steps:
+        -   name: Simple Acccess
+            run: echo "Heloo ${{env.NAME}}"
