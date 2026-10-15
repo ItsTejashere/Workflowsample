@@ -20,7 +20,7 @@ jobs:
           - name: Step level env var
             env:
               NAME: Tejas in step level
-            run: echo "Hello ${{env.name}}"
+            run: echo "Hello ${{env.NAME}}"
 
           - name: Step level access 2
             run: echo "Hello ${{env.NAME}}"
