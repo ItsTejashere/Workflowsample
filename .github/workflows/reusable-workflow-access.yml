@@ -1,0 +1,7 @@
+name: Reusable Workflow access
+on:
+  workflow_dispatch:
+
+jobs:
+  access-workflow:
+    uses: ./.github/workflows/reusableworkflow.yml
