@@ -4,4 +4,4 @@ on:
 
 jobs:
   access-workflow:
-    uses: ./.github/workflows/reusableworkflow.yml
+    uses: ./.github/workflows/reusable-workflow.yml
