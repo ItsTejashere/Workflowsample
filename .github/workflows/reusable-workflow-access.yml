@@ -5,3 +5,6 @@ on:
 jobs:
   access-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      name: Tejas 
+      age: 22
