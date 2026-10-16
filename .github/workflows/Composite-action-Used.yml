@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install node & Python
-      uses: action/ItsTejashere/Composite-action@main
+      uses: ItsTejashere/Composite-action@main
     
