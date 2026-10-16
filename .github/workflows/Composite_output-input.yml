@@ -1,4 +1,3 @@
-
 name: Composite action used and installed the node.js and python
 
 on:
@@ -17,4 +16,4 @@ jobs:
           node-version: '18.20.4'
 
       - name: Display Repository Owner
-        run: echo "Repo Owner: ${{ steps.env-vars.outputs.repo-owner }}"
+        run: echo "Repo Owner = ${{ steps.env-vars.outputs.repo-owner }} "
