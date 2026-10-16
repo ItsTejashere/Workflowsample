@@ -1,0 +1,28 @@
+
+name: Multiple Environments
+
+on:
+  workflow_dispatch:
+
+jobs:
+  DEV:
+    runs-on: ubuntu-latest
+    steps:
+      - name: From dev
+        run: echo "Hello, from dev world"
+
+  BUILD:
+    needs:
+      - DEV
+    runs-on: ubuntu-latest
+    steps:
+      - name: From build
+        run: echo "Hello, from Build world"
+
+  PROD:
+    needs:
+      - BUILD
+    runs-on: ubuntu-latest
+    steps:
+      - name: From prod
+        run: echo "Hello, from Prod world"
