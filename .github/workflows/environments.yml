@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: From dev
         run: |
-          echo "Hello, from dev world"
-          echo "User is ${{vars.UNAME}}"
+          echo "Hello, from dev world" >>$GITHUB_STEP_SUMMARY
+          echo "User is ${{vars.UNAME}}" >>$GITHUB_STEP_SUMMARY
 
   STAGE:
     needs:
@@ -21,8 +21,8 @@ jobs:
     steps:
       - name: From stage
         run: |
-          echo "Hello, from Stage world"
-          echo "User is ${{vars.UNAME}}"
+          echo "Hello, from Stage world" >>$GITHUB_STEP_SUMMARY
+          echo "User is ${{vars.UNAME}}" >>$GITHUB_STEP_SUMMARY
 
   PROD:
     needs:
@@ -32,5 +32,5 @@ jobs:
     steps:
       - name: From prod
         run: |
-          echo "Hello, from Prod world"
-          echo "User is ${{vars.UNAME}}"
+          echo "Hello, from Prod world"  >>$GITHUB_STEP_SUMMARY
+          echo "User is ${{vars.UNAME}}" >>$GITHUB_STEP_SUMMARY
