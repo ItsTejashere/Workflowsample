@@ -7,21 +7,24 @@ on:
 jobs:
   DEV:
     runs-on: ubuntu-latest
+    environment: DEV
     steps:
       - name: From dev
         run: echo "Hello, from dev world"
 
-  BUILD:
+  STAGE:
     needs:
       - DEV
+    environment: STAGE
     runs-on: ubuntu-latest
     steps:
-      - name: From build
-        run: echo "Hello, from Build world"
+      - name: From stage
+        run: echo "Hello, from Stage world"
 
   PROD:
     needs:
-      - BUILD
+      - STAGE
+    environment: PROD
     runs-on: ubuntu-latest
     steps:
       - name: From prod
