@@ -1,0 +1,29 @@
+
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: My Name From Reusable Workflow
+        type: string
+        required: true
+        default: My Name From Reusable Workflow
+
+      age:
+        description: My age
+        type: number
+        required: true
+        default: 22
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Access name
+        shell: bash
+        run: echo "Hello ${{ inputs.name }}"
+
+      - name: Access age
+        shell: bash
+        run: echo "Your age is ${{ inputs.age }}"
