@@ -10,7 +10,9 @@ jobs:
     environment: DEV
     steps:
       - name: From dev
-        run: echo "Hello, from dev world"
+        run: |
+          echo "Hello, from dev world"
+          echo "User is ${{vars.UNAME}}"
 
   STAGE:
     needs:
@@ -19,7 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: From stage
-        run: echo "Hello, from Stage world"
+        run: |
+          echo "Hello, from Stage world"
+          echo "User is ${{vars.UNAME}}"
 
   PROD:
     needs:
@@ -28,4 +32,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: From prod
-        run: echo "Hello, from Prod world"
+        run: |
+          echo "Hello, from Prod world"
+          echo "User is ${{vars.UNAME}}"
