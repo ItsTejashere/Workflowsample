@@ -1,11 +1,20 @@
+
 name: Composite action used and installed the node.js and python
+
 on:
   workflow_dispatch:
 
 jobs:
-  installaion:
+  installation:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Install node & Python
-      uses: ItsTejashere/Composite-action-with-input-and-outputs@v1
-    
+      - name: Install Node.js & Python
+        id: env-vars
+        uses: ItsTejashere/Composite-action-with-input-and-outputs@v1
+        with:
+          python-version: '3.10'
+          node-version: '18.20.4'
+
+      - name: Display Repository Owner
+        run: echo "Repo Owner: ${{ steps.env-vars.outputs.repo-owner }}"
