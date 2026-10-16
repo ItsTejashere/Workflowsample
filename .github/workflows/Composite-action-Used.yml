@@ -1,0 +1,11 @@
+name: Composite action used and installed the node.js and python
+on:
+  workflow_dispatch:
+
+jobs:
+  installaion:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install node & Python
+      uses: action/ItsTejashere/Composite-action@main
+    
